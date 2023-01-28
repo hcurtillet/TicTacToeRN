@@ -9,6 +9,11 @@
         "cross": "Cross",
         "circle": "Circle",
         "playAgain": "Play Again",
-        "restart": "Restart"
+        "restart": "Restart",
+        "mode": {
+            "random": "Random",
+            "smart": "Smart",
+            "human": "Human"
+        }
     }
 }

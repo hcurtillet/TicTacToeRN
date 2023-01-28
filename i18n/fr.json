@@ -10,5 +10,10 @@
         "circle": "Cercle",
         "playAgain": "Jouer à nouveau",
         "restart": "Recommencer",
+        "mode": {
+            "random": "Aléatoire",
+            "smart": "Intelligent",
+            "human": "Humain"
+        }
     },
 };

@@ -5,6 +5,8 @@ import translationEN from './i18n/en.json';
 import translationFR from './i18n/fr.json';
 import { StackNavigation } from './components';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 export const resources = {
     en: {
@@ -27,9 +29,11 @@ i18n.use(initReactI18next).init({
 
 const App = () => {
     return (
-        <SafeAreaProvider>
-            <StackNavigation />
-        </SafeAreaProvider>
+        <Provider store={store}>
+            <SafeAreaProvider>
+                <StackNavigation />
+            </SafeAreaProvider>
+        </Provider>
     );
 };
 
