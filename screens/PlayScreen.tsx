@@ -3,7 +3,7 @@ import { Modal, Text, TouchableOpacity, View } from 'react-native';
 import { TypeCell } from '../types';
 import styled from 'styled-components';
 import { Grid } from '../components/Grid';
-import { RandomPlayer } from '../engine';
+import { RandomPlayer, BlockingPlayer, SmartPlayer, Player } from '../engine';
 import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '../hooks';
 import Icon from 'react-native-vector-icons/Entypo';
@@ -39,21 +39,13 @@ export const PlayScreen = () => {
         }
         switch (mode) {
             case 'Random':
-                if (player === TypeCell.circle) {
-                    setPlayer(TypeCell.cross);
-                    const newGrid = RandomPlayer.ramdomPlay(grid);
-                    setGrid(prevState =>
-                        [...prevState].map((line, x) => {
-                            return [...line].map((cell, y) => {
-                                return newGrid[x][y] !== prevState[x][y]
-                                    ? newGrid[x][y]
-                                    : prevState[x][y];
-                            });
-                        }),
-                    );
-                }
+                IAPlay(RandomPlayer);
+                break;
+            case 'Block':
+                IAPlay(BlockingPlayer);
                 break;
             case 'Smart':
+                IAPlay(SmartPlayer);
                 break;
             case 'Human':
                 break;
@@ -67,6 +59,22 @@ export const PlayScreen = () => {
         isModalVisible && setIsModalVisible(false);
         setWinner(TypeCell.empty);
         setPlayer(TypeCell.cross);
+    };
+
+    const IAPlay = (playerMode: typeof Player) => {
+        if (player === TypeCell.circle) {
+            setPlayer(TypeCell.cross);
+            const newGrid = playerMode.play(grid);
+            setGrid(prevState =>
+                [...prevState].map((line, x) => {
+                    return [...line].map((cell, y) => {
+                        return newGrid[x][y] !== prevState[x][y]
+                            ? newGrid[x][y]
+                            : prevState[x][y];
+                    });
+                }),
+            );
+        }
     };
 
     const handlePlay = (xplay: number, yplay: number) => {

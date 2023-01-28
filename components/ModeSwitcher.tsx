@@ -10,25 +10,35 @@ export const ModeSwitcher = () => {
     const dispatch = useAppDispatch();
 
     return (
-        <Container>
-            <Button onPress={() => dispatch(setMode({ mode: 'Random' }))}>
-                <ButtonText>{t('game.mode.random')}</ButtonText>
-            </Button>
-            <Button onPress={() => dispatch(setMode({ mode: 'Smart' }))}>
-                <ButtonText>{t('game.mode.smart')}</ButtonText>
-            </Button>
-            <Button onPress={() => dispatch(setMode({ mode: 'Human' }))}>
-                <ButtonText>{t('game.mode.human')}</ButtonText>
-            </Button>
-        </Container>
+        <View>
+            <RowContainer>
+                <Button onPress={() => dispatch(setMode({ mode: 'Random' }))}>
+                    <ButtonText>{t('game.mode.random')}</ButtonText>
+                </Button>
+                <Button onPress={() => dispatch(setMode({ mode: 'Smart' }))}>
+                    <ButtonText>{t('game.mode.smart')}</ButtonText>
+                </Button>
+            </RowContainer>
+            <RowContainer>
+                <Button onPress={() => dispatch(setMode({ mode: 'Block' }))}>
+                    <ButtonText>{t('game.mode.block')}</ButtonText>
+                </Button>
+                <Button onPress={() => dispatch(setMode({ mode: 'Human' }))}>
+                    <ButtonText>{t('game.mode.human')}</ButtonText>
+                </Button>
+            </RowContainer>
+        </View>
     );
 };
 
-const Container = styled(View)`
+const RowContainer = styled(View)`
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 `;
 
 const Button = styled(TouchableOpacity)`
+    width: 40%;
     background-color: #0bb;
     border: 1px solid #055;
     border-radius: 5px;
@@ -40,4 +50,5 @@ const Button = styled(TouchableOpacity)`
 
 const ButtonText = styled(Text)`
     font-size: 20px;
+    text-align: center;
 `;

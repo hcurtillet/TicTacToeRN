@@ -1,6 +1,9 @@
 import { TypeCell } from '../types';
 
 export const Player = {
+    play: (lines: TypeCell[][]): TypeCell[][] => {
+        return lines;
+    },
     canPlay: (lines: TypeCell[][]): boolean => {
         return lines.some(line => line.some(cell => cell === TypeCell.empty));
     },

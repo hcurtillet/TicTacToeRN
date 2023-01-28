@@ -13,7 +13,8 @@
         "mode": {
             "random": "Aléatoire",
             "smart": "Intelligent",
-            "human": "Humain"
+            "human": "Humain",
+            "block": "Bloquant"
         },
         "haveToPlay": "doit jouer",
     },
