@@ -1,4 +1,4 @@
-export type {Cell} from './Cell';
-export {TypeCell} from './TypeCell';
-export type {Line} from './Line';
-export type {Grid} from './Grid';
+export type { CellInterface } from './Cell.Interface';
+export { TypeCell } from './TypeCell';
+export type { LineInterface } from './Line.Interface';
+export type { GridInterface } from './Grid.Interface';

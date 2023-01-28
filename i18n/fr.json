@@ -1,0 +1,14 @@
+{
+    "app": {
+        "title": "Tic Tac Toe",
+        "description": "Jeux Tic Tac Toe",
+    },
+    "game": {
+        "gameOver": "Fin de partie",
+        "winner": "Gagnant",
+        "cross": "Croix",
+        "circle": "Cercle",
+        "playAgain": "Jouer à nouveau",
+        "restart": "Recommencer",
+    },
+};

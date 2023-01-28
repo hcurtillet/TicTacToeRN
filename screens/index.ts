@@ -1,1 +1,1 @@
-export {PlayScreen} from './PlayScreen';
+export { PlayScreen } from './PlayScreen';
