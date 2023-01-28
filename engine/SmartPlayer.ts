@@ -15,23 +15,23 @@ export const SmartPlayer = {
         );
     },
     smartPlay(lines: TypeCell[][]): TypeCell[][] | undefined {
-        if (lines[0][1] === TypeCell.empty) {
-            lines[0][1] = TypeCell.circle;
+        if (lines[0][0] === TypeCell.empty) {
+            lines[0][0] = TypeCell.circle;
             return lines;
         }
 
-        if (lines[1][0] === TypeCell.empty) {
-            lines[1][0] = TypeCell.circle;
+        if (lines[2][0] === TypeCell.empty) {
+            lines[2][0] = TypeCell.circle;
             return lines;
         }
 
-        if (lines[1][2] === TypeCell.empty) {
-            lines[1][2] = TypeCell.circle;
+        if (lines[0][2] === TypeCell.empty) {
+            lines[0][2] = TypeCell.circle;
             return lines;
         }
 
-        if (lines[2][1] === TypeCell.empty) {
-            lines[2][1] = TypeCell.circle;
+        if (lines[2][2] === TypeCell.empty) {
+            lines[2][2] = TypeCell.circle;
             return lines;
         }
     },
