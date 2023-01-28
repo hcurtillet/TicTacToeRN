@@ -4,7 +4,10 @@ import { Player } from './Player';
 
 export const RandomPlayer = {
     ...Player,
-    ramdomPlay: (lines: TypeCell[][]): TypeCell[][] => {
+    play: (lines: TypeCell[][]): TypeCell[][] => {
+        return RandomPlayer.randomPlay(lines);
+    },
+    randomPlay: (lines: TypeCell[][]): TypeCell[][] => {
         if (!Player.canPlay(lines)) {
             return lines;
         }

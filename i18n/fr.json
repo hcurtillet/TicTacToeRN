@@ -12,9 +12,13 @@
         "restart": "Recommencer",
         "mode": {
             "random": "Aléatoire",
+            "blocking": "Bloquant",
             "smart": "Intelligent",
-            "human": "Humain"
+            "human": "Humain",
+            "block": "Bloquant"
         },
         "haveToPlay": "doit jouer",
+        "selectMode": "Selectionner le mode de jeu",
+        "currentMode": "Mode de jeu actuel"
     },
 };
