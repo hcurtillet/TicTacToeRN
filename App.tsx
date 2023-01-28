@@ -1,10 +1,10 @@
 import React from 'react';
-import { PlayScreen } from './screens';
-import { SafeAreaView } from 'react-native';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import translationEN from './i18n/en.json';
 import translationFR from './i18n/fr.json';
+import { StackNavigation } from './components';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export const resources = {
     en: {
@@ -27,9 +27,9 @@ i18n.use(initReactI18next).init({
 
 const App = () => {
     return (
-        <SafeAreaView>
-            <PlayScreen />
-        </SafeAreaView>
+        <SafeAreaProvider>
+            <StackNavigation />
+        </SafeAreaProvider>
     );
 };
 
