@@ -4,7 +4,7 @@ import { TypeCell } from '../types';
 import styled from 'styled-components';
 import { Grid } from '../components/Grid';
 import { RandomPlayer } from '../engine';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const initialGrid = [
     [TypeCell.empty, TypeCell.empty, TypeCell.empty],
@@ -13,6 +13,8 @@ const initialGrid = [
 ];
 
 export const PlayScreen = () => {
+    const { t } = useTranslation();
+
     const [grid, setGrid] = useState<TypeCell[][]>(initialGrid);
 
     const [player, setPlayer] = useState<TypeCell>(TypeCell.cross);
