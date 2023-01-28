@@ -31,5 +31,5 @@ const Container = styled(TouchableOpacity)`
     align-content: center;
 `;
 
-const Circle = <Icon name="circle" color="#000" size={100} />;
-const Cross = <Icon name="cross" color="#000" size={130} />;
+const Circle = <Icon name="circle" color="#000" size={70} />;
+const Cross = <Icon name="cross" color="#000" size={100} />;
