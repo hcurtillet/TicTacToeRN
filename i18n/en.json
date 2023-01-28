@@ -12,10 +12,13 @@
         "restart": "Restart",
         "mode": {
             "random": "Random",
+            "blocking": "Blocking",
             "smart": "Smart",
             "human": "Human",
             "block": "Blocking"
         },
         "haveToPlay": "have to play",
+        "selectMode": "Select your gaming mode",
+        "currentMode": "Current gaming mode"
     }
 }
