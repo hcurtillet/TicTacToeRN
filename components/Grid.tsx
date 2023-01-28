@@ -10,7 +10,12 @@ export const Grid = (props: GridInterface) => {
     return (
         <Container>
             {lines.map((item, index) => (
-                <Line cells={item} index={index} handlePlay={handlePlay} />
+                <Line
+                    cells={item}
+                    index={index}
+                    key={index}
+                    handlePlay={handlePlay}
+                />
             ))}
         </Container>
     );

@@ -12,13 +12,13 @@ export const ModeSwitcher = () => {
     return (
         <Container>
             <Button onPress={() => dispatch(setMode({ mode: 'Random' }))}>
-                <Text>{t('game.mode.random')}</Text>
+                <ButtonText>{t('game.mode.random')}</ButtonText>
             </Button>
             <Button onPress={() => dispatch(setMode({ mode: 'Smart' }))}>
-                <Text>{t('game.mode.smart')}</Text>
+                <ButtonText>{t('game.mode.smart')}</ButtonText>
             </Button>
             <Button onPress={() => dispatch(setMode({ mode: 'Human' }))}>
-                <Text>{t('game.mode.human')}</Text>
+                <ButtonText>{t('game.mode.human')}</ButtonText>
             </Button>
         </Container>
     );
@@ -36,4 +36,8 @@ const Button = styled(TouchableOpacity)`
     margin: 10px;
     align-content: center;
     justify-content: center;
+`;
+
+const ButtonText = styled(Text)`
+    font-size: 20px;
 `;

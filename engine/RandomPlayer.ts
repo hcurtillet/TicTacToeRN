@@ -1,10 +1,10 @@
-import { GridInterface, TypeCell } from '../types';
+import { TypeCell } from '../types';
 import { Const } from './Const';
 import { Player } from './Player';
 
 export const RandomPlayer = {
     ...Player,
-    play: (lines: TypeCell[][]): TypeCell[][] => {
+    ramdomPlay: (lines: TypeCell[][]): TypeCell[][] => {
         if (!Player.canPlay(lines)) {
             return lines;
         }

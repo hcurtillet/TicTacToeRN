@@ -13,7 +13,12 @@ export const Line = (props: LineInterface) => {
     return (
         <Container>
             {cells.map((cell, index) => (
-                <Cell type={cell} index={index} handlePlay={handlePlayLine} />
+                <Cell
+                    type={cell}
+                    index={index}
+                    key={index}
+                    handlePlay={handlePlayLine}
+                />
             ))}
         </Container>
     );
