@@ -6,6 +6,7 @@
     "game": {
         "gameOver": "Fin de partie",
         "winner": "Gagnant",
+        "noWinner": "Pas de gagnant",
         "cross": "Croix",
         "circle": "Cercle",
         "playAgain": "Jouer à nouveau",
