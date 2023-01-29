@@ -6,6 +6,7 @@
     "game": {
         "gameOver": "Game Over",
         "winner": "Winner",
+        "noWinner": "No Winner",
         "cross": "Cross",
         "circle": "Circle",
         "playAgain": "Play Again",

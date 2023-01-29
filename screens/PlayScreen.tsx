@@ -7,6 +7,7 @@ import { RandomPlayer, BlockingPlayer, SmartPlayer, Player } from '../engine';
 import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '../hooks';
 import Icon from 'react-native-vector-icons/Entypo';
+import { WinMessageModal } from '../components';
 
 const Cross = <Icon name="cross" color="#000" size={50} />;
 const Circle = <Icon name="circle" color="#000" size={35} />;
@@ -28,13 +29,13 @@ export const PlayScreen = () => {
 
     const [isModalVisible, setIsModalVisible] = useState(false);
 
-    const [winner, setWinner] = useState<TypeCell>(TypeCell.empty);
+    const [winner, setWinner] = useState<TypeCell | null>(null);
 
     useEffect(() => {
-        const { result, winner } = RandomPlayer.isGameOver(grid);
+        const { result, winner: resWinner } = Player.isGameOver(grid);
         if (result) {
             setIsModalVisible(true);
-            winner ? setWinner(winner) : setWinner(TypeCell.empty);
+            resWinner ? setWinner(resWinner) : setWinner(null);
             return;
         }
         switch (mode) {
@@ -102,24 +103,11 @@ export const PlayScreen = () => {
 
     return (
         <Container>
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={isModalVisible}>
-                <ModalContainer>
-                    <MessageView>
-                        <Text>{t('game.gameOver')}</Text>
-                        <Text>{`${t('game.winner')} : ${
-                            winner === TypeCell.cross
-                                ? t('game.cross')
-                                : t('game.circle')
-                        }`}</Text>
-                        <MyButton onPress={restart}>
-                            <ButtonText>{t('game.restart')}</ButtonText>
-                        </MyButton>
-                    </MessageView>
-                </ModalContainer>
-            </Modal>
+            <WinMessageModal
+                isModalVisible={isModalVisible}
+                winner={winner}
+                restart={restart}
+            />
             <Grid lines={grid} handlePlay={handlePlay} />
             <Text style={{ fontSize: 30 }}>
                 {player === TypeCell.cross ? Cross : Circle}
@@ -138,21 +126,6 @@ const Container = styled(View)`
     justify-content: center;
     width: 100%;
     height: 100%;
-`;
-
-const ModalContainer = styled(View)`
-    background-color: #000000aa;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-`;
-
-const MessageView = styled(View)`
-    background-color: #fff;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    width: 80%;
 `;
 
 const MyButton = styled(TouchableOpacity)`
